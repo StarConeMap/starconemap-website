@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Cone Map | Business Recognition Assessment</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20 15c-4-4-10-4-14 0s-4 10 0 14l14 14 14-14c4-4 4-10 0-14s-10-4-14 0z' fill='%23e74c3c'/%3E%3Cpath d='M30 25 L60 40 L30 55 L30 25 Z' fill='none' stroke='%232c3e50' stroke-width='2'/%3E%3Ccircle cx='65' cy='35' r='2' fill='%233498db'/%3E%3Ccircle cx='75' cy='40' r='1.5' fill='%232ecc71'/%3E%3Ccircle cx='70' cy='50' r='2' fill='%23f39c12'/%3E%3C/svg%3E">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.05) 0%, transparent 50%);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+            line-height: 1.1;
+        }
+        
+        .emphasis {
+            background: linear-gradient(135deg, #ffffff, #f39c12);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .access-button {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: #ffffff;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(231,76,60,0.3);
+        }
+        
+        .access-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(231,76,60,0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <!-- Logo and Company Name -->
+                <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 30px;">
+                    <div style="width: 60px; height: 45px; margin-right: 15px;">
+                        <svg viewBox="0 0 200 150" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M35 25c-8-8-20-8-28 0s-8 20 0 28l28 28 28-28c8-8 8-20 0-28s-20-8-28 0z" fill="#e74c3c"/>
+                            <path d="M60 40 L120 75 L60 110 L60 40 Z" fill="none" stroke="#ffffff" stroke-width="2"/>
+                            <path d="M65 45 L115 75 L65 105" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+                            <path d="M70 50 L110 75 L70 100" stroke="#ffffff" stroke-width="1.5" fill="none"/>
+                            <circle cx="125" cy="70" r="2" fill="#3498db"/>
+                            <circle cx="135" cy="65" r="1.5" fill="#2ecc71"/>
+                            <circle cx="145" cy="68" r="2" fill="#f39c12"/>
+                            <circle cx="155" cy="75" r="1.5" fill="#e74c3c"/>
+                            <path d="M120 75 Q140 65, 160 85" stroke="#ffffff" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 style="color: #ffffff; font-size: 1.8rem; font-weight: 600; margin: 0;">Star Cone Map</h3>
+                </div>
+                
+                <h1>While You're <span class="emphasis">Optimizing</span><br>Others Are <span class="emphasis">Moving Forward</span></h1>
+                <p class="subtitle">The world is changing right out from underneath businesses that choose comfort over progress</p>
+                
+                <div style="background: rgba(255,60,60,0.15); border: 1px solid rgba(255,60,60,0.3); padding: 40px; border-radius: 15px; margin: 50px auto; max-width: 900px;">
+                    <h3 style="color: #ff6b6b; margin-bottom: 20px; font-size: 1.6rem; font-weight: 600;">Three Things You Already Know (But Haven't Connected)</h3>
+                    
+                    <div style="margin-bottom: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem; font-weight: 600;">1. Pattern Recognition</h4>
+                        <p style="font-size: 1rem; line-height: 1.6; color: #ffffff; opacity: 0.9;">You've struggled with something for months, then watched someone solve it in 2 minutes. They didn't work harder—they recognized patterns you couldn't see.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem; font-weight: 600;">2. Resource Recognition</h4>
+                        <p style="font-size: 1rem; line-height: 1.6; color: #ffffff; opacity: 0.9;">Someone else could take your laptop, your location, your contacts, your exact resources—and create money right before you. It's not what you have. It's what you recognize in what you have.</p>
+                    </div>
+                    
+                    <div style="margin-bottom: 30px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+                        <h4 style="color: #ffffff; margin-bottom: 15px; font-size: 1.2rem; font-weight: 600;">3. Purpose Recognition</h4>
+                        <p style="font-size: 1rem; line-height: 1.6; color: #ffffff; opacity: 0.9;">It's not about waking up at 4am or working harder. It's about recognizing why you even wake up—the Future Positive Potential Experiences that create anticipation instead of obligation.</p>
+                    </div>
+                    
+                    <p style="font-size: 1.2rem; line-height: 1.7; color: #f39c12; text-align: center; font-weight: 600; margin-top: 20px;">The difference is pattern recognition. Without equal. Nothing but checkmate.</p>
+                </div>
+                
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 15px; margin: 40px auto; max-width: 600px; backdrop-filter: blur(10px);">
+                    <p style="font-size: 1.1rem; font-weight: 500;">When someone else looks at your business situation, what do they see that you're missing?</p>
+                </div>
+                
+                <a href="#recognition" class="access-button">Discover What You're Actually Doing</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pattern Recognition Demonstration -->
+    <section style="background: #ffffff; padding: 80px 0; color: #2c3e50;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; font-weight: 600; margin-bottom: 20px; color: #2c3e50;">See What You Miss in Reviews</h2>
+            <p style="text-align: center; font-size: 1.1rem; color: #7f8c8d; margin-bottom: 50px;">You read reviews to make buying decisions. But what patterns are you missing?</p>
+            
+            <div style="max-width: 700px; margin: 0 auto;">
+                <!-- Review 1 -->
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #3498db;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="background: #e74c3c; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 12px;">MK</div>
+                        <div>
+                            <strong style="color: #2c3e50;">Mike K.</strong>
+                            <div style="color: #f39c12;">★★★★★</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 1rem; line-height: 1.5; color: #2c3e50; margin: 0;">"Been using this for 6 months now. My team loves it and productivity is way up. Setup was quick, support team actually knows what they're doing. Worth every penny - finally found something that just works."</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div style="background: #f8f9fa; padding: 25px; border-radius: 12px; margin-bottom: 20px; border-left: 4px solid #9b59b6;">
+                    <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                        <div style="background: #27ae60; width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; margin-right: 12px;">SL</div>
+                        <div>
+                            <strong style="color: #2c3e50;">Sarah L.</strong>
+                            <div style="color: #f39c12;">★★★☆☆</div>
+                        </div>
+                    </div>
+                    <p style="font-size: 1rem; line-height: 1.5; color: #2c3e50; margin: 0;">"I researched this for weeks before purchasing. The features look good on paper, but the learning curve is steeper than expected. Customer service responds slowly. Might work for larger teams but feels overwhelming for solo use."</p>
+                </div>
+
+                <!-- Comment -->
+                <div style="background: #ecf0f1; padding: 20px; border-radius: 12px; margin-bottom: 30px; border-left: 4px solid #95a5a6;">
+                    <div style="display: flex; align-items: center; margin-bottom: 12px;">
+                        <div style="background: #34495e; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 0.8rem; font-weight: bold; margin-right: 10px;">JR</div>
+                        <strong style="color: #2c3e50; font-size: 0.9rem;">Jake R.</strong>
+                    </div>
+                    <p style="font-size: 0.9rem; line-height: 1.4; color: #2c3e50; margin: 0;">"@Sarah - you just need to give it time. I felt the same way but now I can't imagine working without it."</p>
+                </div>
+
+                <!-- Interactive Questions -->
+                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 30px; border-radius: 12px; color: white;">
+                    <h4 style="margin-bottom: 25px; font-size: 1.3rem; text-align: center;">What Do You See?</h4>
+                    
+                    <div style="margin-bottom: 25px;">
+                        <p style="font-weight: 600; margin-bottom: 12px;">1. Who's more likely extroverted?</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button onclick="showAnswer(1, 'A')" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;">A) Mike</button>
+                            <button onclick="showAnswer(1, 'B')" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;">B) Sarah</button>
+                        </div>
+                        <div id="answer1" style="display: none; margin-top: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 6px; font-size: 0.85rem;"></div>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <p style="font-weight: 600; margin-bottom: 12px;">2. What decision-making bias does Sarah show?</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button onclick="showAnswer(2, 'A')" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;">A) Analysis paralysis</button>
+                            <button onclick="showAnswer(2, 'B')" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;">B) Confirmation bias</button>
+                        </div>
+                        <div id="answer2" style="display: none; margin-top: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 6px; font-size: 0.85rem;"></div>
+                    </div>
+
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 12px;">3. What does Jake's response reveal?</p>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                            <button onclick="showAnswer(3, 'A')" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;">A) Helpful advice</button>
+                            <button onclick="showAnswer(3, 'B')" style="background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-size: 0.9rem; transition: all 0.2s ease;">B) Status quo bias</button>
+                        </div>
+                        <div id="answer3" style="display: none; margin-top: 10px; padding: 10px; background: rgba(255,255,255,0.1); border-radius: 6px; font-size: 0.85rem;"></div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px; padding: 25px; background: #f8f9fa; border-radius: 12px;">
+                    <p style="font-size: 1.2rem; color: #e74c3c; font-weight: 600; margin-bottom: 15px;">This is what you miss when you just read for "good or bad"</p>
+                    <p style="font-size: 1rem; color: #7f8c8d; line-height: 1.5;">Imagine applying this pattern recognition to your customers, employees, and business decisions. What opportunities are you missing because you're only seeing surface content?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appropriate Levels of Concern Section -->
+    <section style="background: linear-gradient(135deg, #2d3436 0%, #636e72 100%); padding: 80px 0; color: #ffffff;">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; font-weight: 600; margin-bottom: 30px;">Appropriate Levels of Concern</h2>
+            <p style="text-align: center; font-size: 1.2rem; opacity: 0.9; margin-bottom: 60px; max-width: 700px; margin-left: auto; margin-right: auto;">Most business leaders worry about the wrong things while staying calm about actual threats.</p>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <!-- High Concern (Wrong Things) -->
+                <div style="background: rgba(231, 76, 60, 0.1); border: 2px solid #e74c3c; border-radius: 12px; padding: 30px; margin-bottom: 25px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="background: #e74c3c; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 1.5rem;">🚨</div>
+                        <h3 style="color: #e74c3c; font-size: 1.4rem; margin: 0;">HIGH CONCERN (But Probably Wrong Things)</h3>
+                    </div>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Competitors copying your pricing strategy
+                        </li>
+                        <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            New features your competition just launched
+                        </li>
+                        <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Economic uncertainty affecting your industry
+                        </li>
+                        <li style="padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #e74c3c;">•</span>
+                            Whether your current processes are "optimized enough"
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Low Concern (Real Threats) -->
+                <div style="background: rgba(52, 152, 219, 0.1); border: 2px solid #3498db; border-radius: 12px; padding: 30px; margin-bottom: 25px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="background: #3498db; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 1.5rem;">😴</div>
+                        <h3 style="color: #3498db; font-size: 1.4rem; margin: 0;">LOW CONCERN (But Actually Real Threats)</h3>
+                    </div>
+                    <ul style="list-style: none; padding: 0; margin: 0;">
+                        <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #3498db;">•</span>
+                            Competitors using pattern recognition frameworks you don't know exist
+                        </li>
+                        <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #3498db;">•</span>
+                            Your inability to see transformation zones in customer behavior
+                        </li>
+                        <li style="margin-bottom: 12px; padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #3498db;">•</span>
+                            Resource opportunities you're missing because you don't recognize the patterns
+                        </li>
+                        <li style="padding-left: 25px; position: relative;">
+                            <span style="position: absolute; left: 0; color: #3498db;">•</span>
+                            Operating with familiar methods while the landscape shifts underneath you
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Appropriate Concern -->
+                <div style="background: rgba(46, 204, 113, 0.1); border: 2px solid #2ecc71; border-radius: 12px; padding: 30px;">
+                    <div style="display: flex; align-items: center; margin-bottom: 20px;">
+                        <div style="background: #2ecc71; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 20px; font-size: 1.5rem;">🎯</div>
+                        <h3 style="color: #2ecc71; font-size: 1.4rem; margin: 0;">APPROPRIATE CONCERN</h3>
+                    </div>
+                    <p style="margin: 0; font-size: 1.1rem; line-height: 1.6; padding-left: 25px;">
+                        Recognizing that some people see patterns you don't, use frameworks you've never heard of, and operate from recognition levels that make your current challenges irrelevant. <strong>This is what you should be concerned about.</strong>
+                    </p>
+                </div>
+
+                <div style="text-align: center; margin-top: 50px; padding: 30px; background: rgba(255,255,255,0.05); border-radius: 12px;">
+                    <p style="font-size: 1.3rem; margin-bottom: 20px; color: #f39c12; font-weight: 600;">"While you're worried about surface competition, others are using recognition frameworks you don't know exist."</p>
+                    <p style="font-size: 1rem; opacity: 0.8; margin: 0;">This is why the neighbor was concerned about the $20 cost instead of being amazed by the pattern recognition that solved months of struggle in 2 minutes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Invitation -->
+    <section style="background: linear-gradient(135deg, #ffffff 0%, #f1f2f6 100%); padding: 100px 0; color: #2c3e50; text-align: center;" id="recognition">
+        <div class="container">
+            <h2 style="font-size: 2.8rem; font-weight: 600; margin-bottom: 30px; color: #2c3e50;">Star Cone Map Business Assessment</h2>
+            
+            <div style="background: #2c3e50; color: #ffffff; padding: 40px; border-radius: 12px; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.3rem; line-height: 1.7; text-align: center; font-style: italic;">"We often cling to what feels safe, drawn by the comfort of the familiar and the illusion of stability. Yet, in doing so, we risk becoming tethered to a past that no longer serves us, while opportunities for growth slip quietly by."</p>
+            </div>
+            
+            <p style="font-size: 1.2rem; margin-bottom: 40px; color: #e74c3c; font-weight: 500;">This assessment reveals the pattern recognition blind spots that are costing you market position right now.</p>
+
+            <div style="background: #2c3e50; color: #ffffff; padding: 40px 50px; border-radius: 12px; display: inline-block; margin: 30px 0;">
+                <div style="font-size: 3rem; font-weight: 300; margin-bottom: 10px;">$497</div>
+                <div style="font-size: 1.1rem; opacity: 0.9;">Complete recognition analysis<br>Custom improvement roadmap</div>
+            </div>
+            
+            <br>
+            
+            <a href="https://forms.gle/kERfi1j5AFKprGwHA" class="access-button" style="font-size: 1.3rem; padding: 20px 50px;">Begin Your Star Cone Map Assessment</a>
+            
+            <p style="margin-top: 30px; color: #7f8c8d; font-size: 0.95rem;">Assessment completion: 20-25 minutes | Analysis delivery: 48 hours</p>
+            
+            <div style="margin-top: 60px; padding: 30px; background: #f8f9fa; border-radius: 12px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <p style="font-size: 1.1rem; color: #2c3e50; font-weight: 500; margin-bottom: 15px;">We'll show you what you're not seeing.</p>
+                <p style="font-size: 1rem; color: #7f8c8d;">And we'll go with you to discover it. Because people are more likely to move forward when someone goes with them.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showAnswer(questionNum, choice) {
+            const answers = {
+                1: {
+                    A: "✅ Correct! Mike uses 'my team loves it' (social validation), 'finally found something' (community language), and shorter, confident statements - classic extrovert patterns.",
+                    B: "❌ Sarah shows introvert patterns: extensive research, detailed analysis, cautious language, and concern about being overwhelmed."
+                },
+                2: {
+                    A: "✅ Correct! 'Researched for weeks' shows overthinking before action. Her detailed critique after purchase suggests she analyzed herself into buyer's remorse.",
+                    B: "❌ This would be seeking info that confirms existing beliefs. Sarah shows the opposite - over-analyzing until paralyzed."
+                },
+                3: {
+                    A: "❌ While seemingly helpful, Jake dismisses Sarah's legitimate concerns without addressing them.",
+                    B: "✅ Correct! 'You just need to give it time' and 'can't imagine working without it' shows resistance to change and assumption that his adaptation is universal."
+                }
+            };
+            
+            document.getElementById('answer' + questionNum).innerHTML = answers[questionNum][choice];
+            document.getElementById('answer' + questionNum).style.display = 'block';
+        }
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Button hover effects
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.background = 'rgba(255,255,255,0.3)';
+            });
+            button.addEventListener('mouseleave', function() {
+                this.style.background = 'rgba(255,255,255,0.2)';
+            });
+        });
+    </script>
+</body>
+</html>
